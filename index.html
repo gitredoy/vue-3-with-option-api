@@ -45,6 +45,13 @@
             <ul class="border">
                 <li v-for="(item,index) in items" :key="item.id">{{index}}-{{item.label}}</li>
             </ul>
+
+            <br>
+            <br>
+
+            <input v-model="addNewItem" placeholder="Add Item" type="text" class="form-control">
+            <button class="btn btn-success btn-block mt-2" v-on:click="items.push({id:items.length+1,label:addNewItem})">Add Item</button>
+
         </div>
     </div>
 </div>
