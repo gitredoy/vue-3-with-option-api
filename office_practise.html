@@ -56,7 +56,6 @@
         </ul>
         <p v-if="priorities.length > 4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, similique.</p>
       </section>
-
       <!-- Output Section -->
       <section class="border p-2 mb-3">
         <h5 class="text-center border p-1">Output</h5>
@@ -75,6 +74,17 @@
           Choose Priority:
           <span class="text-warning text-uppercase">{{priorityCheck}}</span>
         </p>
+      </section>
+      <!-- Toggle Button Section -->
+      <section class="border p-2 mb-3">
+        <h5 class="text-center border p-1">Toggle Button</h5>
+        <button v-if="editing"  @click="saveBtn(false)"  class="btn btn-danger btn-block">Remove Item</button>
+        <button v-else  @click="saveBtn(true)"  class="btn btn-primary btn-block">Add Item</button>
+      </section>
+      <!-- HTML Attribute Binding  Section -->
+      <section class="border p-2 mb-3">
+        <h5 class="text-center border p-1">Attribute Binding</h5>
+        <a v-bind:href="linkBind">Click Here</a>
       </section>
     </div>
   </div>
@@ -112,13 +122,18 @@
            id:4,
            label:'Sport Priority'
          }
-       ]
+       ],
+       editing: false,
+       linkBind: 'https://www.facebook.com',
      }
    },
    methods:{
      saveItem(){
        this.priorities.push({id:this.priorities.length+1,label:this.addNewList});
        this.addNewList = " ";
+     },
+     saveBtn(value){
+       this.editing = value;
      }
    }
  })
