@@ -14,6 +14,7 @@
       background-color: #c7eaea;
     }
 
+
   </style>
 
 </head>
@@ -52,7 +53,7 @@
         <hr>
         <label>Priority List:</label>
         <ul>
-          <li v-for="(priority,key) in priorities">{{key}}-{{priority.id}}-{{priority.label}}</li>
+          <li v-bind:class=""  v-for="(priority,key) in priorities">{{key}}-{{priority.id}}-{{priority.label}}</li>
         </ul>
         <p v-if="priorities.length > 4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, similique.</p>
       </section>
@@ -125,6 +126,7 @@
        ],
        editing: false,
        linkBind: 'https://www.facebook.com',
+       delTag: true,
      }
    },
    methods:{
