@@ -36,7 +36,7 @@
         <p class="text-center mt-2">{{myInput}}</p>
         <p class="text-center mt-2 counter">{{characterCount}}/20</p>
         <ul>
-          <li v-for="(list,key) in reversedItems">{{key+1}}-{{list.name}}</li>
+          <li v-for="(list,key) in myList">{{key+1}}-{{list.name}}</li>
         </ul>
         <p v-if="myList.length >4 ">Item list is now bigger than 5 & total item {{myList.length}} </p>
 
